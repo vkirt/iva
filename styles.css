@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #002366; /* Lacivert */
+    color: #FFD700; /* Sarı */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Header'ın altına 20px boşluk ekler */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-align: center; /* İçeriği ortalar */
+}
+
+.logo-image {
+    height: 150px; /* Logo yüksekliği */
+    margin-right: 1px; /* Logo ile başlık arasındaki boşluk */
+}
+
+.logo h1 {
+    margin: 0; /* Başlık için üst ve alt boşluğu sıfırlar */
+    font-size: 24px; /* Başlık boyutu */
+    color: #FFD700; /* Başlık rengi */
+}
+
+.logo .subtitle {
+    position: relative;
+    left: -490px; /* Sola doğru kaydırmak için */
+    margin-top: 60px;
+    font-size: 18px;
+    color: #FFD700;
+}
+
+.ataturk-container {
+    position: absolute; /* Menü üstünde konumlandırır */
+    top: -20px; /* Yukarıdan 20px boşluk bırakır */
+    right: 600px; /* Sağdan 20px boşluk bırakır */
+    z-index: 10; /* Menüden üstte görünmesini sağlar */
+    opacity: 0.3;
+}
+
+.ataturk-signature {
+    max-width: 200px; /* İmzanın genişliğini sınırlar */
+    height: auto; /* Oranları korur */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #FFD700; /* Sarı */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fff;
+}
+
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.section__text__p1 {
+    font-size: 16px; /* Paragrafın yazı puntosu */
+}
+
+.title {
+    font-size: 32px; /* Başlığın yazı puntosu */
+}
+
+#about {
+    background-color: #FFD700; /* Sarı */
+    color: #002366; /* Lacivert */
+    font-size: 18px; /* Yazı boyutu */
+}
+
+#about p {
+    text-align: justify;
+    line-height: 2; /* Satır yüksekliği */
+    margin-bottom: 20px; /* Paragraflar arasında boşluk */
+}
+
+#about p:last-of-type {
+    margin-bottom: 0; /* Son paragrafın altındaki boşluğu kaldır */
+}
+
+#teams, #gallery {
+    background-color: #f4f4f4;
+}
+
+#contact {
+    background-color: #002366; /* Lacivert */
+    color: #FFD700; /* Sarı */
+}
+
+footer {
+    background-color: #002366; /* Lacivert */
+    color: #FFD700; /* Sarı */
+    text-align: center;
+    padding: 20px;
+}
+
+#scrollUp {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+#scrollUp img {
+    width: 100%;
+    height: 100%;
+}
+
+#coaches {
+    text-align: center;
+    padding: 20px;
+}
+
+.coach {
+    display: inline-block;
+    width: 250px;
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.coach-image {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.coach h3 {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+.coach p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+#gallery {
+    text-align: center;
+    padding: 20px;
+}
+
+.gallery-item {
+    display: inline-block;
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Geçiş efekti */
+}
+
+.gallery-item:hover {
+    transform: scale(1.1); /* Resmi %10 büyütme */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Hover olduğunda gölgeyi büyütme */
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Geçiş efekti */
+}
+
+/* Slider Container */
+.slider-container {
+    position: relative; /* Kapsayıcıya relative position vermek slider'ın doğru yerleşimini sağlar */
+    max-width: 50%;
+    margin: auto;
+    overflow: hidden;
+    margin-bottom: 20px; /* Slider'ın altına 20px boşluk ekler */
+}
+
+/* Slider */
+.slider {
+    position: absolute; /* Slider'ı konumlandırmak için absolute kullanıyoruz */
+    top: 20px; /* Üstten 20px boşluk bırakır */
+    left: 20px; /* Soldan 20px boşluk bırakır */
+    width: 80%; /* Slider'ın genişliğini %80 olarak ayarlar */
+    max-width: 600px; /* Maksimum genişlik sınırı */
+    margin: 0; /* Marjinleri sıfırlar */
+    overflow: hidden;
+}
+.slide {
+    display: none;
+}
+
+/* Dots (Indicators) */
+.dots {
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb; /* Default color */
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active {
+    background-color: #fff; /* Active dot color */
+}
+
+@media (max-width: 768px) {
+    .slider {
+        width: 100%; /* Daha küçük ekranlarda slider genişliğini %100 yapar */
+    }
+}
+
+.slide {
+    display: none;
+    width: 100%; /* Slayt kapsayıcısının genişliği */
+    height: 400px; /* Sabit yükseklik ayarlayın */
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Resmi kapsayıcıya orantılı şekilde sığdırır */
+    position: absolute; /* Pozisyonlamayı doğru yapmak için */
+    top: 0;
+    left: 0;
+}
+
+@keyframes fade {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: #FFD700;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 3px;
+    user-select: none;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: #002366;
+}
+
+ /* CONTACT */
+
+ #contact {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 40vh;  
+}
+
+.contact-info-upper-container {
+    display: flex;
+    justify-content: center;
+    border-radius: 2rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    border-color: rgb(255, 255, 255);
+    background: #FFD700;
+    margin: 2rem auto;
+    padding: 0.5rem; 
+}
+
+.contact-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem;
+}
+
+.contact-info-container p {
+    font-size: larger;
+}
+
+.contact-icon {
+    width: 30px;  /* Genişlik */
+    height: 30px; /* Yükseklik */
+}
+
+div {
+    text-align: center;
+}
+
+.phone-number {
+    color: #002366;  /* Renk seçimi */
+}
