@@ -114,14 +114,27 @@ section {
 #contact {
     background-color: #002366; /* Lacivert */
     color: #FFD700; /* Sarı */
+    width: 100vw; /* Görüntüleme genişliği */
+    margin-left: calc(-50vw + 50%); /* Kenar boşluklarını kaldırmak için */
+    margin-right: calc(-50vw + 50%); /* Kenar boşluklarını kaldırmak için */
+    padding: 20px; /* İçerik etrafına padding ekler */
+    box-sizing: border-box; /* Padding ve border genişliğe dahil */
+    margin-bottom: 10px; /* Alt margin ekleyin, isteğe bağlı olarak ayarlayın */
 }
 
 footer {
-    background-color: #002366; /* Lacivert */
-    color: #FFD700; /* Sarı */
+    background-color: #FFD700; /* Lacivert */
+    color: #002366; /* Sarı */  
     text-align: center;
     padding: 20px;
-}
+    width: 100vw; /* Görüntüleme genişliği */
+    position: relative;
+    left: 50%; /* Orta hizalamayı sağlamak için */
+    right: 50%; /* Orta hizalamayı sağlamak için */
+    margin-left: -50vw; /* Orta hizalamayı sağlamak için */
+    margin-right: -50vw; /* Orta hizalamayı sağlamak için */
+    box-sizing: border-box; /* Padding ve border genişliğe dahil */
+    margin-top: 17px; /* Üst margin ekleyin, isteğe bağlı olarak ayarlayın */}
 
 #scrollUp {
     display: none;
@@ -344,4 +357,265 @@ div {
 
 .phone-number {
     color: #002366;  /* Renk seçimi */
+}
+
+/* GENEL STİLLER (Tüm cihazlar için geçerli) */
+#contact {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: auto; /* Yükseklik otomatik ayarlandı */
+    padding: 20px; /* İçerik etrafına padding ekle */
+}
+
+.contact-info-upper-container {
+    display: flex;
+    justify-content: center;
+    border-radius: 32px; /* Border radius */
+    border: 1px solid rgb(255, 255, 255); /* Beyaz çerçeve */
+    background: #FFD700;
+    margin: 2rem auto; /* Üst ve alt marjin */
+    padding: 1rem; /* İçerik etrafına padding */
+}
+
+.contact-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* Bilgi kutuları arası boşluk */
+    margin: 1rem; /* Genel marjin */
+}
+
+.contact-info-container p {
+    font-size: 18px; /* Yazı boyutu */
+}
+
+.contact-icon {
+    width: 30px;  /* İkon genişliği */
+    height: 30px; /* İkon yüksekliği */
+}
+
+div {
+    text-align: center;
+}
+
+.phone-number {
+    color: #002366;  /* Telefon numarası rengi */
+}
+
+/* Küçük ekranlar için contact kısmını uyumlu hale getirelim */
+@media (max-width: 768px) {
+    #contact {
+        flex-direction: column; /* Dikey düzenleme */
+        height: auto;  /* Yükseklik otomatik */
+        padding: 20px; /* İçerik etrafına padding */
+    }
+
+    .contact-info-upper-container {
+        flex-direction: column; /* Bilgi kutuları alt alta gelsin */
+        padding: 1rem; /* İçerik etrafına padding */
+        text-align: center; /* Metni ortala */
+        width: 100%; /* Tam genişlik kullan */
+    }
+
+    .contact-info-container {
+        flex-direction: column; /* Dikey düzenleme */
+        gap: 1rem; /* Boşluk */
+        margin: 0; /* Marjin sıfırla */
+    }
+
+    .contact-info-container p {
+        font-size: 16px; /* Yazı boyutunu küçült */
+    }
+
+    .contact-icon {
+        width: 25px; /* Simge boyutunu küçült */
+        height: 25px; /* Simge yüksekliği küçült */
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-info-upper-container {
+        width: 90%; /* Daha küçük ekranlar için genişlik */
+        margin: 1rem auto; /* Ortala */
+        padding: 1rem;
+    }
+
+    .contact-info-container {
+        gap: 0.5rem; /* Bilgiler arasındaki boşluk azaldı */
+    }
+
+    .contact-info-container p {
+        font-size: 14px; /* Yazı boyutunu daha küçült */
+    }
+
+    .contact-icon {
+        width: 20px; /* Küçük ekranlar için simge boyutu */
+        height: 20px;
+    }
+}
+
+/* Diğer responsive ayarları */
+@media (max-width: 1200px) {
+    .logo .subtitle {
+        left: -250px; /* Daha az sola kaydır */
+    }
+
+    .ataturk-container {
+        right: 400px; /* Sağdan konum */
+    }
+}
+
+@media (max-width: 992px) {
+    .slider-container {
+        max-width: 80%; /* Orta ekranlar için slider genişliği */
+    }
+
+    nav ul {
+        flex-direction: column; /* Menü alt alta gelsin */
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-top: 10px; /* Menü elemanları arasına boşluk */
+    }
+
+    .logo-image {
+        height: 100px; /* Logo yüksekliği */
+    }
+    .logo h1 {
+        font-size: 12px; /* Başlık boyutu küçült */
+    }
+
+    .logo .subtitle {
+        font-size: 10px; /* Alt başlık yazı boyutunu küçült */
+        margin-top: 30px; /* Yukarıya biraz boşluk */
+    }
+
+    .logo .subtitle {
+        left: -245px; /* Daha az sola kaydır */
+    }
+
+    .ataturk-container {
+        right: 300px; /* Sağdan konum */
+    }
+}
+
+@media (max-width: 768px) {
+    .slider-container {
+        max-width: 100%; /* Küçük ekranlar için slider genişliği */
+    }
+
+    .logo-image {
+        height: 80px; /* Logo boyutunu küçült */
+    }
+
+    .logo .subtitle {
+        font-size: 12px; /* Alt başlık yazı boyutu */
+        left: -287px; /* Daha az kaydır */
+    }
+
+    .ataturk-container {
+        display: none; /* Küçük ekranlarda Atatürk imzası gizlenir */
+    }
+
+    .contact-info-container p {
+        font-size: 16px; /* Telefon numarası yazı boyutu küçült */
+    }
+
+    .coach {
+        width: 100%; /* Koç kutularını tam genişlik yap */
+    }
+
+    .gallery-item {
+        width: 150px; /* Galeri resim boyutunu küçült */
+        height: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        flex-direction: column;
+        text-align: center; /* Header içeriği ortala */
+    }
+
+    .logo-image {
+        height: 60px; /* Daha küçük logo */
+    }
+
+    .logo h1 {
+        font-size: 8px; /* Başlık boyutu küçült */
+    }
+
+    .logo .subtitle {
+        font-size: 7px; /* Alt başlık yazı boyutunu küçült */
+        margin-top: 20px; /* Yukarıya biraz boşluk */
+    }
+
+    .ataturk-container {
+        display: none; /* Küçük ekranlarda gizle */
+    }
+
+    nav ul {
+        flex-direction: column; /* Menü alt alta gelsin */
+    }
+
+    .gallery-item {
+        width: 120px; /* Galeri resim boyutunu küçült */
+        height: 120px;
+    }
+
+    .slide {
+        height: 300px; /* Slider yüksekliği küçülsün */
+    }
+
+    .contact-info-container p {
+        font-size: 12px; /* Telefon numarası yazı boyutunu küçült */
+    }
+}
+@media (max-width: 1200px) {
+    .logo .subtitle {
+        left: -250px; /* Daha az sola kaydır */
+    }
+
+    .ataturk-container {
+        right: 400px; /* Sağdan konum */
+    }
+}
+
+@media (max-width: 380px) {
+    .slider-container {
+        max-width: 80%; /* Orta ekranlar için slider genişliği */
+    }
+
+    nav ul {
+        flex-direction: column; /* Menü alt alta gelsin */
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-top: 10px; /* Menü elemanları arasına boşluk */
+    }
+
+    .logo-image {
+        height: 50px; /* Logo yüksekliği */
+    }
+    .logo h1 {
+        font-size: 6px; /* Başlık boyutu küçült */
+    }
+
+    .logo .subtitle {
+        font-size: 5px; /* Alt başlık yazı boyutunu küçült */
+        margin-top: 10px; /* Yukarıya biraz boşluk */
+    }
+
+    .logo .subtitle {
+        left: -123px; /* Daha az sola kaydır */
+    }
+
+    .ataturk-container {
+        right: 300px; /* Sağdan konum */
+    }
 }
